@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca0h55ilrfsdd"]
+
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_8jkq2"]
+[ext_resource type="Texture2D" uid="uid://67im15jrt5p4" path="res://Art/fish-sprite.png" id="2_butwx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7p27f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_10xgv"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_8jkq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 1.24326
+scale = Vector2(0.553911, 0.547913)
+shape = SubResource("CapsuleShape2D_7p27f")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("CapsuleShape2D_10xgv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_butwx")
