@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdskh2sbieyth"]
+
+[ext_resource type="Script" path="res://Scenes/bubble_dispenser.gd" id="1_5r8hq"]
+[ext_resource type="Texture2D" uid="uid://6j1rc34nhuit" path="res://Art/bubble-dispenser.png" id="1_uhyr2"]
+[ext_resource type="PackedScene" uid="uid://ctgfhu20n1t0u" path="res://Scenes/bubble.tscn" id="2_h78f1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cgyh"]
+size = Vector2(30, 17)
+
+[node name="BubbleDispenser" type="StaticBody2D"]
+z_as_relative = false
+y_sort_enabled = true
+script = ExtResource("1_5r8hq")
+direction = "right"
+bubble_scene = ExtResource("2_h78f1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2cgyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uhyr2")
+
+[node name="BubbleSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(-8, 5)
+
+[node name="BubbleTimer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[connection signal="timeout" from="BubbleTimer" to="." method="_on_bubble_timer_timeout"]

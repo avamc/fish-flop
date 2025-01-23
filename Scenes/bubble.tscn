@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctgfhu20n1t0u"]
+
+[ext_resource type="Script" path="res://Scenes/bubble.gd" id="1_fladn"]
+[ext_resource type="Texture2D" uid="uid://3q6t0tjlp638" path="res://Art/Bubble.png" id="1_x00sb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8erpg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egpyk"]
+
+[node name="Bubble" type="Node2D" groups=["bubble"]]
+z_index = 1
+script = ExtResource("1_fladn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x00sb")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+z_as_relative = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+scale = Vector2(0.460001, 0.460001)
+shape = SubResource("CircleShape2D_8erpg")
+
+[node name="BubbleArea" type="Area2D" parent="." groups=["bubble"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BubbleArea"]
+scale = Vector2(1.36, 1.36)
+shape = SubResource("CircleShape2D_egpyk")
+
+[connection signal="body_entered" from="PlayerArea" to="." method="_on_player_area_body_entered"]
+[connection signal="area_entered" from="BubbleArea" to="." method="_on_bubble_area_area_entered"]

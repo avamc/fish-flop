@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=4 uid="uid://ua2w51u5ue5c"]
+[gd_scene load_steps=7 format=4 uid="uid://ua2w51u5ue5c"]
 
 [ext_resource type="TileSet" uid="uid://buqdotkqvg4ne" path="res://Tile Sets/WaterTiles.tres" id="1_4oend"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_xqadi"]
 [ext_resource type="PackedScene" uid="uid://ca0h55ilrfsdd" path="res://Scenes/player.tscn" id="2_25nrd"]
 [ext_resource type="TileSet" uid="uid://cxbap6k2hirmj" path="res://Tile Sets/GroundTiles.tres" id="2_b0au3"]
+[ext_resource type="TileSet" uid="uid://cbym26taqlqg3" path="res://Tile Sets/Collision.tres" id="5_sk0wa"]
+[ext_resource type="PackedScene" uid="uid://cdskh2sbieyth" path="res://Scenes/bubble_dispenser.tscn" id="6_wxnd3"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-4, -111)
@@ -18,9 +20,35 @@ tile_set = ExtResource("1_4oend")
 tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAEAP//AAADAAAAAAAEAP7/AAADAAAAAAAEAP3/AAADAAAAAAADAP//AAACAAAAAAACAP//AAACAAAAAAABAP//AAACAAAAAAAAAP//AAACAAAAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAADAP7/AAACAAAAAAADAP3/AAACAAAAAAACAP3/AAACAAAAAAABAP3/AAACAAAAAAAAAP3/AAACAAAAAAAAAPz/AAACAAAAAAABAPz/AAACAAAAAAACAPz/AAACAAAAAAADAPz/AAACAAAAAAAEAPz/AAADAAAAAAAAAPv/AAACAAAAAAABAPv/AAACAAAAAAACAPv/AAACAAAAAAADAPv/AAACAAAAAAAEAPv/AAADAAAAAAAAAPr/AAACAAAAAAABAPr/AAACAAAAAAACAPr/AAACAAAAAAADAPr/AAACAAAAAAAEAPr/AAADAAAAAAD//wAAAAAEAAAAAAD/////AAACAAAAAAD///7/AAACAAAAAAD///3/AAACAAAAAAD///z/AAACAAAAAAD///v/AAACAAAAAAD///r/AAACAAAAAAD///n/AAACAAAAAAAAAPn/AAACAAAAAAABAPn/AAACAAAAAAACAPn/AAACAAAAAAADAPn/AAACAAAAAAAEAPn/AAADAAAAAAAEAPj/AAADAAAAAAD///j/AAACAAAAAAAAAPj/AAACAAAAAAABAPj/AAACAAAAAAACAPj/AAACAAAAAAADAPj/AAACAAAAAAD+//z/AAACAAAAAAD9//z/AAACAAAAAAD8//z/AAACAAAAAAD7//z/AAACAAAAAAD7//v/AAADAAAAAAD6//v/AAACAAAAAAD6//z/AAACAAAAAAD6//r/AAACAAAAAAD6//n/AAACAAAAAAD7//n/AAADAAAAAAD7//r/AAADAAAAAAD6//3/AAAEAAAAAAD7//3/AAAEAAAAAAD8//3/AAAEAAAAAAD9//3/AAAEAAAAAAD+//3/AAAEAAAAAAA=")
 tile_set = ExtResource("2_b0au3")
 
+[node name="BubbleBounds" type="TileMapLayer" parent="." groups=["collision_tile"]]
+tile_map_data = PackedByteArray("AAAHAAEAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAP//AAAAAAAAAAAHAP7/AAAAAAAAAAAHAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAHAPv/AAAAAAAAAAAHAPr/AAAAAAAAAAAHAPn/AAAAAAAAAAAHAPj/AAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAA=")
+tile_set = ExtResource("5_sk0wa")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(82, -18)
-zoom = Vector2(2.5, 2.5)
+zoom = Vector2(3, 3)
 
-[node name="PlayerSpawnpoint" type="Marker2D" parent="."]
-position = Vector2(32, -1)
+[node name="PlayerSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -113.0
+offset_top = -128.0
+offset_right = 277.0
+offset_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.4, 0.66, 1, 1)
+
+[node name="BubbleDispenser2" parent="." instance=ExtResource("6_wxnd3")]
+position = Vector2(176, -48)
+direction = "left"
+
+[node name="BubbleDispenser" parent="." instance=ExtResource("6_wxnd3")]
+position = Vector2(97, -56)
+direction = "down"
+
+[node name="BubbleDispenser3" parent="." instance=ExtResource("6_wxnd3")]
+position = Vector2(48, -32)
+direction = "down"
