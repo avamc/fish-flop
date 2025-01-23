@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=4 uid="uid://ua2w51u5ue5c"]
 
-[ext_resource type="TileSet" uid="uid://buqdotkqvg4ne" path="res://Scenes/WaterTiles.tres" id="1_4oend"]
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_xqadi"]
+[ext_resource type="TileSet" uid="uid://buqdotkqvg4ne" path="res://Tile Sets/WaterTiles.tres" id="1_4oend"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_xqadi"]
 [ext_resource type="PackedScene" uid="uid://ca0h55ilrfsdd" path="res://Scenes/player.tscn" id="2_25nrd"]
-[ext_resource type="TileSet" uid="uid://cxbap6k2hirmj" path="res://Scenes/GroundTiles.tres" id="2_b0au3"]
+[ext_resource type="TileSet" uid="uid://cxbap6k2hirmj" path="res://Tile Sets/GroundTiles.tres" id="2_b0au3"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-4, -111)
