@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://ua2w51u5ue5c"]
+[gd_scene load_steps=6 format=4 uid="uid://ua2w51u5ue5c"]
 
 [ext_resource type="TileSet" uid="uid://buqdotkqvg4ne" path="res://Tile Sets/WaterTiles.tres" id="1_4oend"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_xqadi"]
 [ext_resource type="PackedScene" uid="uid://ca0h55ilrfsdd" path="res://Scenes/player.tscn" id="2_25nrd"]
 [ext_resource type="TileSet" uid="uid://cxbap6k2hirmj" path="res://Tile Sets/GroundTiles.tres" id="2_b0au3"]
 [ext_resource type="TileSet" uid="uid://cbym26taqlqg3" path="res://Tile Sets/Collision.tres" id="5_sk0wa"]
-[ext_resource type="PackedScene" uid="uid://cdskh2sbieyth" path="res://Scenes/bubble_dispenser.tscn" id="6_wxnd3"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-4, -111)
@@ -40,15 +39,3 @@ offset_bottom = 90.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 color = Color(0.4, 0.66, 1, 1)
-
-[node name="BubbleDispenser2" parent="." instance=ExtResource("6_wxnd3")]
-position = Vector2(176, -48)
-direction = "left"
-
-[node name="BubbleDispenser" parent="." instance=ExtResource("6_wxnd3")]
-position = Vector2(97, -56)
-direction = "down"
-
-[node name="BubbleDispenser3" parent="." instance=ExtResource("6_wxnd3")]
-position = Vector2(48, -32)
-direction = "down"

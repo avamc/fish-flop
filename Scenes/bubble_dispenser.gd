@@ -46,4 +46,4 @@ func spawn_bubble():
 	var bubble = bubble_scene.instantiate()
 	add_child(bubble)
 	bubble.position = $BubbleSpawnPoint.position
-	bubble.spawn(direction, $BubbleSpawnPoint.position)
+	bubble.spawn(direction, $BubbleSpawnPoint.global_position)

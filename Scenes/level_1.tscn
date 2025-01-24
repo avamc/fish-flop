@@ -1,13 +1,27 @@
 [gd_scene load_steps=3 format=4 uid="uid://d32mbe6ekau40"]
 
-[ext_resource type="TileSet" uid="uid://buqdotkqvg4ne" path="res://Tile Sets/WaterTiles.tres" id="1_55m8q"]
-[ext_resource type="TileSet" uid="uid://cxbap6k2hirmj" path="res://Tile Sets/GroundTiles.tres" id="2_pq4hu"]
+[ext_resource type="PackedScene" uid="uid://ua2w51u5ue5c" path="res://Scenes/Main.tscn" id="1_pybwa"]
+[ext_resource type="PackedScene" uid="uid://cdskh2sbieyth" path="res://Scenes/bubble_dispenser.tscn" id="2_5bphy"]
 
-[node name="Level 1" type="Node2D"]
+[node name="Main" instance=ExtResource("1_pybwa")]
 
-[node name="Water" type="TileMapLayer" parent="."]
-tile_set = ExtResource("1_55m8q")
+[node name="Water" parent="." index="0"]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAJAP//AAACAAEAAAAJAAAAAAACAAEAAAAJAAEAAAACAAEAAAAJAAIAAAACAAEAAAAJAAMAAAACAAEAAAAJAAQAAAACAAEAAAAIAAUAAAADAAEAAAAHAAYAAAADAAEAAAAHAAUAAAADAAEAAAAEAAEAAAACAAEAAAA=")
 
-[node name="Grass" type="TileMapLayer" parent="Water"]
-tile_map_data = PackedByteArray("AAACAP//AAACAAAAAAADAP//AAACAAAAAAADAAAAAAACAAAAAAAEAAAAAAACAAAAAAAFAAAAAAACAAAAAAAGAAAAAAACAAAAAAAHAAAAAAACAAAAAAAGAP//AAACAAAAAAAFAP//AAACAAAAAAAEAP//AAACAAAAAAACAAAAAAACAAAAAAAHAP//AAACAAAAAAAHAP7/AAACAAAAAAAGAP7/AAACAAAAAAAFAP7/AAACAAAAAAAEAP7/AAACAAAAAAADAP7/AAACAAAAAAACAP7/AAACAAAAAAACAP3/AAACAAAAAAADAP3/AAACAAAAAAAEAP3/AAACAAAAAAAFAP3/AAACAAAAAAAGAP3/AAACAAAAAAAHAP3/AAACAAAAAAA=")
-tile_set = ExtResource("2_pq4hu")
+[node name="Grass" parent="." index="1"]
+unique_name_in_owner = true
+tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAEAP//AAADAAAAAAAEAP7/AAADAAAAAAAEAP3/AAADAAAAAAADAP//AAACAAAAAAACAP//AAACAAAAAAABAP//AAACAAAAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAADAP7/AAACAAAAAAADAP3/AAACAAAAAAACAP3/AAACAAAAAAABAP3/AAACAAAAAAAAAP3/AAACAAAAAAAAAPz/AAACAAAAAAABAPz/AAABAAAAAAACAPz/AAACAAAAAAADAPz/AAACAAAAAAAEAPz/AAADAAAAAAAAAPv/AAACAAAAAAABAPv/AAACAAAAAAACAPv/AAACAAAAAAADAPv/AAACAAAAAAAEAPv/AAADAAAAAAAAAPr/AAACAAAAAAABAPr/AAACAAAAAAACAPr/AAACAAAAAAADAPr/AAACAAAAAAAEAPr/AAADAAAAAAD//wAAAAAEAAAAAAD/////AAACAAAAAAD///7/AAACAAAAAAD///3/AAACAAAAAAD///z/AAACAAAAAAD///v/AAACAAAAAAD///r/AAACAAAAAAD///n/AAACAAAAAAAAAPn/AAACAAAAAAABAPn/AAACAAAAAAACAPn/AAACAAAAAAADAPn/AAACAAAAAAAEAPn/AAADAAAAAAAEAPj/AAADAAAAAAD///j/AAACAAAAAAAAAPj/AAACAAAAAAABAPj/AAACAAAAAAACAPj/AAACAAAAAAADAPj/AAACAAAAAAA=")
+
+[node name="Camera2D" parent="." index="3"]
+position = Vector2(105, -18)
+
+[node name="PlayerSpawnPoint" parent="." index="4"]
+position = Vector2(96, -16)
+
+[node name="BubbleDispenser" parent="." index="5" instance=ExtResource("2_5bphy")]
+position = Vector2(32, -8)
+
+[node name="ColorRect" parent="." index="6"]
+offset_left = -89.0
+offset_right = 301.0
