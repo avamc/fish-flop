@@ -52,7 +52,6 @@ func pop():
 			player.global_position = player_reset_position
 		else:
 			player.global_position = player_reset_position
-
 	#play animation
 	#play sound
 	queue_free()
@@ -61,6 +60,9 @@ func _on_bubble_area_area_entered(area):
 	if area.is_in_group("bubble"):
 		pop()
 		area.get_parent().pop()
+	if area.is_in_group("wall"):
+		print("wall")
+		pop()
 
 func _on_player_area_body_entered(body):
 	if body.is_in_group("player"):

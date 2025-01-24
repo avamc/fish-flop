@@ -21,6 +21,7 @@ player=""
 bubble=""
 collision_tile=""
 player_collision_tile=""
+wall=""
 
 [input]
 

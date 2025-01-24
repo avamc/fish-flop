@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://d32mbe6ekau40"]
+[gd_scene load_steps=5 format=4 uid="uid://d32mbe6ekau40"]
 
 [ext_resource type="PackedScene" uid="uid://ua2w51u5ue5c" path="res://Scenes/Main.tscn" id="1_pybwa"]
 [ext_resource type="PackedScene" uid="uid://cdskh2sbieyth" path="res://Scenes/bubble_dispenser.tscn" id="2_5bphy"]
+[ext_resource type="PackedScene" uid="uid://c52b2exx7gf8n" path="res://Scenes/button.tscn" id="3_828m0"]
+[ext_resource type="PackedScene" uid="uid://cttd3dqsigjhe" path="res://Scenes/horizontal_wall.tscn" id="4_ohqpd"]
 
 [node name="Main" instance=ExtResource("1_pybwa")]
 
@@ -14,7 +16,7 @@ unique_name_in_owner = true
 tile_map_data = PackedByteArray("AAAAAAAAAAAEAAAAAAABAAAAAAAEAAAAAAACAAAAAAAEAAAAAAADAAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAEAP//AAADAAAAAAAEAP7/AAADAAAAAAAEAP3/AAADAAAAAAADAP//AAACAAAAAAACAP//AAACAAAAAAABAP//AAACAAAAAAAAAP7/AAACAAAAAAABAP7/AAACAAAAAAACAP7/AAACAAAAAAADAP7/AAACAAAAAAADAP3/AAACAAAAAAACAP3/AAACAAAAAAABAP3/AAACAAAAAAAAAP3/AAACAAAAAAAAAPz/AAACAAAAAAABAPz/AAABAAAAAAACAPz/AAACAAAAAAADAPz/AAACAAAAAAAEAPz/AAADAAAAAAAAAPv/AAACAAAAAAABAPv/AAACAAAAAAACAPv/AAACAAAAAAADAPv/AAACAAAAAAAEAPv/AAADAAAAAAAAAPr/AAACAAAAAAABAPr/AAACAAAAAAACAPr/AAACAAAAAAADAPr/AAACAAAAAAAEAPr/AAADAAAAAAD//wAAAAAEAAAAAAD/////AAACAAAAAAD///7/AAACAAAAAAD///3/AAACAAAAAAD///z/AAACAAAAAAD///v/AAACAAAAAAD///r/AAACAAAAAAD///n/AAACAAAAAAAAAPn/AAACAAAAAAABAPn/AAACAAAAAAACAPn/AAACAAAAAAADAPn/AAACAAAAAAAEAPn/AAADAAAAAAAEAPj/AAADAAAAAAD///j/AAACAAAAAAAAAPj/AAACAAAAAAABAPj/AAACAAAAAAACAPj/AAACAAAAAAADAPj/AAACAAAAAAA=")
 
 [node name="Camera2D" parent="." index="3"]
-position = Vector2(105, -18)
+position = Vector2(105, -10)
 
 [node name="PlayerSpawnPoint" parent="." index="4"]
 position = Vector2(96, -16)
@@ -24,4 +26,13 @@ position = Vector2(32, -8)
 
 [node name="ColorRect" parent="." index="6"]
 offset_left = -89.0
+offset_top = -118.0
 offset_right = 301.0
+offset_bottom = 100.0
+
+[node name="Button" parent="." index="7" node_paths=PackedStringArray("wall") instance=ExtResource("3_828m0")]
+position = Vector2(144, -16)
+wall = NodePath("../HorizontalWall")
+
+[node name="HorizontalWall" parent="." index="8" instance=ExtResource("4_ohqpd")]
+position = Vector2(88, -36)

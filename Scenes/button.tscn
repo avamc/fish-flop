@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c52b2exx7gf8n"]
+
+[ext_resource type="Texture2D" uid="uid://bh341u8nw51p6" path="res://Art/button.png" id="1_f0x4o"]
+[ext_resource type="Script" path="res://Scenes/button.gd" id="1_xtdd1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t5wpp"]
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_xtdd1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_f0x4o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(0.7, 0.15)
+shape = SubResource("CapsuleShape2D_t5wpp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

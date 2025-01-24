@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cttd3dqsigjhe"]
+
+[ext_resource type="Script" path="res://wall.gd" id="1_32cf0"]
+[ext_resource type="Texture2D" uid="uid://cuyp10yrhi001" path="res://Art/wall-horizontal.png" id="2_y054p"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wbq6"]
+radius = 15.0
+
+[node name="HorizontalWall" type="Area2D" groups=["wall"]]
+script = ExtResource("1_32cf0")
+lowered_texture_path = "res://Art/wall-horizontal-lowered.png"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_y054p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["wall"]]
+z_index = 1
+position = Vector2(4, 2)
+rotation = 0.459122
+scale = Vector2(0.83875, 0.516001)
+shape = SubResource("CapsuleShape2D_2wbq6")
